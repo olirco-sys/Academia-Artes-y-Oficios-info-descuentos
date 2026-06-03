@@ -1,0 +1,1177 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Academia Artes y Oficios | Cursos</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    :root{
+      --azul-oscuro:#08295c;
+      --azul-medio:#0077a8;
+      --azul-claro:#bfeefa;
+      --verde:#7bb342;
+      --verde-fuerte:#22a447;
+      --blanco:#ffffff;
+      --gris:#f5f9fc;
+      --amarillo:#ffd166;
+      --rojo:#ef233c;
+    }
+
+    *{
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:'Segoe UI', Arial, sans-serif;
+      color:#17324a;
+      background:#fff;
+    }
+
+    .navbar{
+      background:linear-gradient(90deg,var(--azul-oscuro),var(--azul-medio));
+    }
+
+    .navbar-brand{
+      letter-spacing:.2px;
+    }
+
+    .btn-whatsapp{
+      background:linear-gradient(90deg,var(--verde),#9bd45c);
+      color:white!important;
+      font-weight:800;
+      border:none;
+      border-radius:50px;
+      padding:.9rem 1.5rem;
+      box-shadow:0 10px 24px rgba(0,0,0,.18);
+    }
+
+    .btn-whatsapp:hover{
+      transform:translateY(-2px);
+    }
+
+    .section-title{
+      color:var(--azul-oscuro);
+      font-weight:900;
+    }
+
+    .urgency-bar{
+      background:linear-gradient(90deg,#061d41,#0077a8,#22a447);
+      color:white;
+      padding:.6rem 0;
+      font-weight:800;
+      text-align:center;
+      margin-top:56px;
+    }
+
+    .urgency-bar a{
+      color:#ffd166;
+    }
+
+    .hero-cursos{
+      padding-top:80px;
+      padding-bottom:70px;
+      background:
+        radial-gradient(circle at top right,rgba(191,238,250,.75),transparent 35%),
+        linear-gradient(135deg,#f7fbff,#eaf8fc);
+    }
+
+    .course-card{
+      border:0;
+      border-radius:24px;
+      padding:1.5rem;
+      height:100%;
+      background:white;
+      box-shadow:0 12px 28px rgba(8,41,92,.12);
+      transition:.3s;
+    }
+
+    .course-card:hover{
+      transform:translateY(-6px);
+    }
+
+    .icon-box{
+      width:58px;
+      height:58px;
+      border-radius:18px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:linear-gradient(135deg,var(--azul-medio),var(--azul-claro));
+      color:white;
+      font-size:1.6rem;
+      margin-bottom:1rem;
+    }
+
+    .badge-area{
+      background:rgba(0,119,168,.1);
+      color:var(--azul-oscuro);
+      border:1px solid rgba(0,119,168,.25);
+    }
+
+    .price{
+      color:var(--azul-oscuro);
+      font-weight:900;
+      font-size:1.1rem;
+    }
+
+    .area-block{
+      padding:45px 0;
+    }
+
+    .area-block:nth-child(even){
+      background:#f7fbff;
+    }
+
+    .cta{
+      background:linear-gradient(135deg,var(--azul-oscuro),var(--azul-medio));
+      color:white;
+      border-radius:32px;
+      padding:3rem 2rem;
+    }
+
+    .footer{
+      background:#061d41;
+      color:white;
+    }
+
+    .floating-whatsapp{
+      position:fixed;
+      right:22px;
+      bottom:22px;
+      background:#25d366;
+      color:white!important;
+      width:62px;
+      height:62px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:2rem;
+      box-shadow:0 10px 25px rgba(0,0,0,.25);
+      z-index:999;
+      text-decoration:none;
+    }
+
+    .pulse{
+      animation:pulse 1.4s infinite;
+    }
+
+    @keyframes pulse{
+      0%{transform:scale(1)}
+      50%{transform:scale(1.035)}
+      100%{transform:scale(1)}
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">
+        Academia Artes y Oficios
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Inicio</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active" href="cursos.html">Cursos</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link fw-bold text-warning" href="descuento.html">15% descuento</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- BARRA DE URGENCIA -->
+  <div class="urgency-bar">
+    Oferta inicial activa: primeras 10 personas con 15% de descuento ·
+    <a href="descuento.html">Reclamar ahora</a>
+  </div>
+
+  <!-- HERO CURSOS -->
+  <section class="hero-cursos">
+    <div class="container text-center">
+      <h1 class="display-4 section-title">
+        Cursos y áreas de formación
+      </h1>
+
+      <p class="fs-5 text-muted">
+        Elige un curso, consulta por WhatsApp y aprovecha la promoción antes de que finalice.
+      </p>
+
+      <a href="descuento.html" class="btn btn-whatsapp btn-lg pulse">
+        <i class="bi bi-lightning-charge me-2"></i>
+        Reclamar 15% de descuento
+      </a>
+    </div>
+  </section>
+
+  <!-- INFORMÁTICA -->
+  <section class="area-block">
+    <div class="container">
+      <div class="d-flex align-items-center gap-3 mb-4">
+        <div class="icon-box mb-0">
+          <i class="bi bi-laptop"></i>
+        </div>
+
+        <div>
+          <h2 class="section-title mb-1">Informática</h2>
+          <p class="text-muted mb-0">Herramientas digitales para estudio, trabajo y emprendimiento.</p>
+        </div>
+      </div>
+
+      <div class="row g-4">
+
+        <div class="col-md-6 col-lg-4">
+          <div class="course-card">
+            <span class="badge badge-area rounded-pill mb-2">Informática</span>
+            <h4>Power BI AI</h4>
+            <p>Reportes visuales, análisis de datos e inteligencia artificial aplicada.</p>
+            <p class="price">₡70 000</p>
+            <a class="btn btn-whatsapp btn-sm"
+               href="https://wa.me/50688342439?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Power%20BI%20AI%20y%20deseo%20aplicar%20al%2015%25%20de%20descuento.">
+              Consultar por WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="course-card">
+            <span class="badge badge-area rounded-pill mb-2">Informática</span>
+            <h4>Excel intermedio-avanzado</h4>
+            <p>Funciones, tablas, filtros y herramientas para productividad.</p>
+            <p class="price">₡70 000</p>
+            <a class="btn btn-whatsapp btn-sm"
+               href="https://wa.me/50688342439?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Excel%20intermedio-avanzado%20y%20deseo%20aplicar%20al%2015%25%20de%20descuento.">
+              Consultar por WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="course-card">
+            <span class="badge badge-area rounded-pill mb-2">Informática</span>
+            <h4>Alfabetización digital para adultos mayores</h4>
+            <p>Uso de celular, computadora, internet y herramientas básicas.</p>
+            <p class="price">₡70 000</p>
+            <a class="btn btn-whatsapp btn-sm"
+               href="https://wa.me/50688342439?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Alfabetizaci%C3%B3n%20digital%20para%20adultos%20mayores%20y%20deseo%20aplicar%20al%2015%25%20de%20descuento.">
+              Consultar por WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="course-card">
+            <span class="badge badge-area rounded-pill mb-2">Informática</span>
+            <h4>Ofimática introductoria</h4>
+            <p>Introducción a Word, Excel, PowerPoint y documentos básicos.</p>
+            <p class="price">₡43 000</p>
+            <a class="btn btn-whatsapp btn-sm"
+               href="https://wa.me/50688342439?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Ofim%C3%A1tica%20introductoria%20y%20deseo%20aplicar%20al%2015%25%20de%20descuento.">
+              Consultar por WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="course-card">
+            <span class="badge badge-area rounded-pill mb-2">Informática</span>
+            <h4>Excel Básico</h4>
+            <p>Organización de datos, cálculos simples y formato de hojas.</p>
+            <p class="price">₡43 000</p>
+            <a class="btn btn-whatsapp btn-sm"
+               href="https://wa.me/50688342439?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Excel%20B%C3%A1sico%20y%20deseo%20aplicar%20al%2015%25%20de%20descuento.">
+              Consultar por WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="course-card">
+            <span class="badge badge-area rounded-pill mb-2">Informática</span>
+            <h4>Excel Intermedio</h4>
+            <p>Funciones, filtros, tablas y manejo de datos.</p>
+            <p class="price">₡43 000</p>
+            <a class="btn btn-whatsapp btn-sm"
+               href="https://wa.me/50688342439?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Excel%20Intermedio%20y%20deseo%20aplicar%20al%2015%25%20de%20descuento.">
+              Consultar por WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="course-card">
+            <span class="badge badge-area rounded-pill mb-2">Informática</span>
+            <h4>Excel Avanzado</h4>
+            <p>Análisis, herramientas avanzadas y automatización básica.</p>
+            <p class="price">₡43 000</p>
+            <a class="btn btn-whatsapp btn-sm"
+               href="https://wa.me/50688342439?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Excel%20Avanzado%20y%20deseo%20aplicar%20al%2015%25%20de%20descuento.">
+              Consultar por WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="course-card">
+            <span class="badge badge-area rounded-pill mb-2">Informática</span>
+            <h4>Word: documentos administrativos</h4>
+            <p>Cartas, informes, tablas y documentos formales.</p>
+            <p class="price">₡43 000</p>
+            <a class="btn btn-whatsapp btn-sm"
+               href="https://wa.me/50688342439?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Word%20documentos%20administrativos%20y%20deseo%20aplicar%20al%2015%25%20de%20descuento.">
+              Consultar por WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="course-card">
+            <span class="badge badge-area rounded-pill mb-2">Informática</span>
+            <h4>Ciberseguridad en dispositivos móviles</h4>
+            <p>Protección de cuentas, datos personales y dispositivos.</p>
+            <p class="price">₡20 000</p>
+            <a class="btn btn-whatsapp btn-sm"
+               href="https://wa.me/50688342439?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Ciberseguridad%20en%20dispositivos%20m%C3%B3viles%20y%20deseo%20aplicar%20al%2015%25%20de%20descuento.">
+              Consultar por WhatsApp
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MANUALIDADES -->
+  <section class="area-block">
+    <div class="container">
+      <div class="d-flex align-items-center gap-3 mb-4">
+        <div class="icon-box mb-0">
+          <i class="bi bi-palette"></i>
+        </div>
+
+        <div>
+          <h2 class="section-title mb-1">Manualidades</h2>
+          <p class="text-muted mb-0">Cursos creativos para aprender, emprender y generar ingresos.</p>
+        </div>
+      </div>
+
+      <div class="row g-4">
+
+        <div class="col-md-6 col-lg-4">
+          <div class="course-card">
+            <span class="badge badge-area rounded-pill mb-2">Manualidades</span>
+            <h4>Flores eternas: rosas y girasoles</h4>
+            <p>Elaboración de flores decorativas ideales para regalos y ventas.</p>
+            <p class="price">₡20 000</p>
+            <a class="btn btn-whatsapp btn-sm"
+               href="https://wa.me/50688342439?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Flores%20eternas%20y%20deseo%20aplicar%20al%2015%25%20de%20descuento.">
+              Consultar por WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="course-card">
+            <span class="badge badge-area rounded-pill mb-2">Manualidades</span>
+            <h4>Garnish: arte con frutas y verduras</h4>
+            <p>Decoración creativa para eventos y presentación de alimentos.</p>
+            <p class="price">₡20 000</p>
+            <a class="btn btn-whatsapp btn-sm"
+               href="https://wa.me/50688342439?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Garnish%20y%20deseo%20aplicar%20al%2015%25%20de%20descuento.">
+              Consultar por WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="course-card">
+            <span class="badge badge-area rounded-pill mb-2">Manualidades</span>
+            <h4>Bordado</h4>
+            <p>Técnicas para decorar prendas, accesorios y artículos personalizados.</p>
+            <p class="price">₡20 000</p>
+            <a class="btn btn-whatsapp btn-sm"
+               href="https://wa.me/50688342439?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Bordado%20y%20deseo%20aplicar%20al%2015%25%20de%20descuento.">
+              Consultar por WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="course-card">
+            <span class="badge badge-area rounded-pill mb-2">Manualidades</span>
+            <h4>Tejido</h4>
+            <p>Puntadas básicas para elaborar piezas artesanales.</p>
+            <p class="price">₡20 000</p>
+            <a class="btn btn-whatsapp btn-sm"
+               href="https://wa.me/50688342439?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Tejido%20y%20deseo%20aplicar%20al%2015%25%20de%20descuento.">
+              Consultar por WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="course-card">
+            <span class="badge badge-area rounded-pill mb-2">Manualidades</span>
+            <h4>Taller de Quilting</h4>
+            <p>Diseño de piezas decorativas con técnica de acolchado.</p>
+            <p class="price">₡32 000</p>
+            <a class="btn btn-whatsapp btn-sm"
+               href="https://wa.me/50688342439?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Taller%20de%20Quilting%20y%20deseo%20aplicar%20al%2015%25%20de%20descuento.">
+              Consultar por WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="course-card">
+            <span class="badge badge-area rounded-pill mb-2">Manualidades</span>
+            <h4>Resina</h4>
+            <p>Creación de artículos decorativos y personalizados.</p>
+            <p class="price">₡25 000</p>
+            <a class="btn btn-whatsapp btn-sm"
+               href="https://wa.me/50688342439?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Resina%20y%20deseo%20aplicar%20al%2015%25%20de%20descuento.">
+              Consultar por WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="course-card">
+            <span class="badge badge-area rounded-pill mb-2">Manualidades</span>
+            <h4>Decoración con Decoupage</h4>
+            <p>Personalización de objetos con acabados decorativos.</p>
+            <p class="price">₡30 000</p>
+            <a class="btn btn-whatsapp btn-sm"
+               href="https://wa.me/50688342439?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Decoraci%C3%B3n%20con%20Decoupage%20y%20deseo%20aplicar%20al%2015%25%20de%20descuento.">
+              Consultar por WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="course-card">
+            <span class="badge badge-area rounded-pill mb-2">Manualidades</span>
+            <h4>Velas</h4>
+            <p>Elaboración de velas artesanales para uso personal o venta.</p>
+            <p class="price">₡25 000</p>
+            <a class="btn btn-whatsapp btn-sm"
+               href="https://wa.me/50688342439?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Velas%20y%20deseo%20aplicar%20al%2015%25%20de%20descuento.">
+              Consultar por WhatsApp
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MECÁNICA Y SOLDADURA -->
+  <section class="area-block">
+    <div class="container">
+      <div class="d-flex align-items-center gap-3 mb-4">
+        <div class="icon-box mb-0">
+          <i class="bi bi-tools"></i>
+        </div>
+
+        <div>
+          <h2 class="section-title mb-1">Mecánica y Soldadura</h2>
+          <p class="text-muted mb-0">Formación técnica práctica para el desarrollo laboral.</p>
+        </div>
+      </div>
+
+      <div class="row g-4">
+
+        <div class="col-md-6 col-lg-4">
+          <div class="course-card">
+            <span class="badge badge-area rounded-pill mb-2">Mecánica y Soldadura</span>
+            <h4>Mecánica básica automotriz</h4>
+            <p>Mantenimiento, herramientas y funcionamiento básico del vehículo.</p>
+            <p class="price">₡180 000</p>
+            <a class="btn btn-whatsapp btn-sm"
+               href="https://wa.me/50688342439?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Mec%C3%A1nica%20b%C3%A1sica%20automotriz%20y%20deseo%20aplicar%20al%2015%25%20de%20descuento.">
+              Consultar por WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="course-card">
+            <span class="badge badge-area rounded-pill mb-2">Mecánica y Soldadura</span>
+            <h4>Mecánica agrícola</h4>
+            <p>Mantenimiento básico de maquinaria agrícola.</p>
+            <p class="price">₡200 000</p>
+            <a class="btn btn-whatsapp btn-sm"
+               href="https://wa.me/50688342439?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Mec%C3%A1nica%20agr%C3%ADcola%20y%20deseo%20aplicar%20al%2015%25%20de%20descuento.">
+              Consultar por WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="course-card">
+            <span class="badge badge-area rounded-pill mb-2">Mecánica y Soldadura</span>
+            <h4>Soldadura básica</h4>
+            <p>Seguridad, herramientas y técnicas iniciales.</p>
+            <p class="price">₡200 000</p>
+            <a class="btn btn-whatsapp btn-sm"
+               href="https://wa.me/50688342439?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Soldadura%20b%C3%A1sica%20y%20deseo%20aplicar%20al%2015%25%20de%20descuento.">
+              Consultar por WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="course-card">
+            <span class="badge badge-area rounded-pill mb-2">Mecánica y Soldadura</span>
+            <h4>Soldadura intermedia</h4>
+            <p>Técnicas de unión, práctica y acabados funcionales.</p>
+            <p class="price">₡200 000</p>
+            <a class="btn btn-whatsapp btn-sm"
+               href="https://wa.me/50688342439?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Soldadura%20intermedia%20y%20deseo%20aplicar%20al%2015%25%20de%20descuento.">
+              Consultar por WhatsApp
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- REPOSTERÍA -->
+  <section class="area-block">
+    <div class="container">
+      <div class="d-flex align-items-center gap-3 mb-4">
+        <div class="icon-box mb-0">
+          <i class="bi bi-cup-hot"></i>
+        </div>
+
+        <div>
+          <h2 class="section-title mb-1">Repostería</h2>
+          <p class="text-muted mb-0">Aprende técnicas dulces para emprender o mejorar tus habilidades.</p>
+        </div>
+      </div>
+
+      <div class="row g-4">
+
+        <div class="col-md-6 col-lg-4">
+          <div class="course-card">
+            <span class="badge badge-area rounded-pill mb-2">Repostería</span>
+            <h4>Repostería básico</h4>
+            <p>Técnicas iniciales para elaborar productos dulces.</p>
+            <p class="price">₡60 000</p>
+            <a class="btn btn-whatsapp btn-sm"
+               href="https://wa.me/50688342439?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Reposter%C3%ADa%20b%C3%A1sico%20y%20deseo%20aplicar%20al%2015%25%20de%20descuento.">
+              Consultar por WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="course-card">
+            <span class="badge badge-area rounded-pill mb-2">Repostería</span>
+            <h4>Pastelería básico</h4>
+            <p>Preparación y decoración básica de pasteles.</p>
+            <p class="price">₡60 000</p>
+            <a class="btn btn-whatsapp btn-sm"
+               href="https://wa.me/50688342439?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Pasteler%C3%ADa%20b%C3%A1sico%20y%20deseo%20aplicar%20al%2015%25%20de%20descuento.">
+              Consultar por WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="course-card">
+            <span class="badge badge-area rounded-pill mb-2">Repostería</span>
+            <h4>Pasta hojaldre</h4>
+            <p>Preparación de recetas con hojaldre para venta o consumo.</p>
+            <p class="price">₡20 000</p>
+            <a class="btn btn-whatsapp btn-sm"
+               href="https://wa.me/50688342439?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Pasta%20hojaldre%20y%20deseo%20aplicar%20al%2015%25%20de%20descuento.">
+              Consultar por WhatsApp
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- JARDINERÍA -->
+  <section class="area-block">
+    <div class="container">
+      <div class="d-flex align-items-center gap-3 mb-4">
+        <div class="icon-box mb-0">
+          <i class="bi bi-flower1"></i>
+        </div>
+
+        <div>
+          <h2 class="section-title mb-1">Jardinería</h2>
+          <p class="text-muted mb-0">Formación verde para decoración, producción y emprendimiento.</p>
+        </div>
+      </div>
+
+      <div class="row g-4">
+
+        <div class="col-md-6 col-lg-4">
+          <div class="course-card">
+            <span class="badge badge-area rounded-pill mb-2">Jardinería</span>
+            <h4>Taller: Kokedamas</h4>
+            <p>Elaboración de plantas decorativas con técnica japonesa.</p>
+            <p class="price">₡30 000</p>
+            <a class="btn btn-whatsapp btn-sm"
+               href="https://wa.me/50688342439?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Kokedamas%20y%20deseo%20aplicar%20al%2015%25%20de%20descuento.">
+              Consultar por WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="course-card">
+            <span class="badge badge-area rounded-pill mb-2">Jardinería</span>
+            <h4>Curso: Hidroponía</h4>
+            <p>Cultivo sin suelo para producción y emprendimiento.</p>
+            <p class="price">₡40 000</p>
+            <a class="btn btn-whatsapp btn-sm"
+               href="https://wa.me/50688342439?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Hidropon%C3%ADa%20y%20deseo%20aplicar%20al%2015%25%20de%20descuento.">
+              Consultar por WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="course-card">
+            <span class="badge badge-area rounded-pill mb-2">Jardinería</span>
+            <h4>Bonsai</h4>
+            <p>Cuido, diseño y mantenimiento básico de bonsáis.</p>
+            <p class="price">₡45 000</p>
+            <a class="btn btn-whatsapp btn-sm"
+               href="https://wa.me/50688342439?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Bonsai%20y%20deseo%20aplicar%20al%2015%25%20de%20descuento.">
+              Consultar por WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="course-card">
+            <span class="badge badge-area rounded-pill mb-2">Jardinería</span>
+            <h4>Jardines verticales</h4>
+            <p>Diseño de espacios verdes decorativos.</p>
+            <p class="price">Consultar</p>
+            <a class="btn btn-whatsapp btn-sm"
+               href="https://wa.me/50688342439?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Jardines%20verticales%20y%20deseo%20aplicar%20al%2015%25%20de%20descuento.">
+              Consultar por WhatsApp
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- BAILE Y GIMNASIA -->
+  <section class="area-block">
+    <div class="container">
+      <div class="d-flex align-items-center gap-3 mb-4">
+        <div class="icon-box mb-0">
+          <i class="bi bi-music-note-beamed"></i>
+        </div>
+
+        <div>
+          <h2 class="section-title mb-1">Baile y Gimnasia</h2>
+          <p class="text-muted mb-0">Movimiento, expresión, salud y desarrollo corporal.</p>
+        </div>
+      </div>
+
+      <div class="row g-4">
+
+        <div class="col-md-6 col-lg-4">
+          <div class="course-card">
+            <span class="badge badge-area rounded-pill mb-2">Baile y Gimnasia</span>
+            <h4>Baile popular adultos</h4>
+            <p>Movimiento, ritmo y expresión corporal.</p>
+            <p class="price">₡15 000</p>
+            <a class="btn btn-whatsapp btn-sm"
+               href="https://wa.me/50688342439?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Baile%20popular%20adultos%20y%20deseo%20aplicar%20al%2015%25%20de%20descuento.">
+              Consultar por WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="course-card">
+            <span class="badge badge-area rounded-pill mb-2">Baile y Gimnasia</span>
+            <h4>Baile popular niños de 7 a 12 años</h4>
+            <p>Baile recreativo para coordinación y expresión.</p>
+            <p class="price">₡15 000</p>
+            <a class="btn btn-whatsapp btn-sm"
+               href="https://wa.me/50688342439?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Baile%20popular%20para%20ni%C3%B1os%20y%20deseo%20aplicar%20al%2015%25%20de%20descuento.">
+              Consultar por WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="course-card">
+            <span class="badge badge-area rounded-pill mb-2">Baile y Gimnasia</span>
+            <h4>Gimnasia estimulación temprana</h4>
+            <p>Niños de 1 a 4 años. Actividad física para motricidad y desarrollo infantil.</p>
+            <p class="price">₡15 000</p>
+            <a class="btn btn-whatsapp btn-sm"
+               href="https://wa.me/50688342439?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Gimnasia%20estimulaci%C3%B3n%20temprana%20y%20deseo%20aplicar%20al%2015%25%20de%20descuento.">
+              Consultar por WhatsApp
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MÚSICA -->
+  <section class="area-block">
+    <div class="container">
+      <div class="d-flex align-items-center gap-3 mb-4">
+        <div class="icon-box mb-0">
+          <i class="bi bi-music-note-list"></i>
+        </div>
+
+        <div>
+          <h2 class="section-title mb-1">Música</h2>
+          <p class="text-muted mb-0">Estimulación musical y percusión para distintas edades.</p>
+        </div>
+      </div>
+
+      <div class="row g-4">
+
+        <div class="col-md-6 col-lg-4">
+          <div class="course-card">
+            <span class="badge badge-area rounded-pill mb-2">Música</span>
+            <h4>Percusión desde los 3 años hasta adultos</h4>
+            <p>Ritmo, coordinación y expresión musical.</p>
+            <p class="price">₡20 000</p>
+            <a class="btn btn-whatsapp btn-sm"
+               href="https://wa.me/50688342439?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Percusi%C3%B3n%20y%20deseo%20aplicar%20al%2015%25%20de%20descuento.">
+              Consultar por WhatsApp
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- INGLÉS PARA NIÑOS -->
+  <section class="area-block">
+    <div class="container">
+      <div class="d-flex align-items-center gap-3 mb-4">
+        <div class="icon-box mb-0">
+          <i class="bi bi-translate"></i>
+        </div>
+
+        <div>
+          <h2 class="section-title mb-1">Inglés para niños</h2>
+          <p class="text-muted mb-0">Programas por edades con metodología dinámica y divertida.</p>
+        </div>
+      </div>
+
+      <div class="row g-4">
+
+        <div class="col-md-6 col-lg-4">
+          <div class="course-card">
+            <span class="badge badge-area rounded-pill mb-2">Inglés para niños</span>
+            <h4>Tiny Explorers English</h4>
+            <p>Edad 2–4 años. Estimulación inicial con juegos y canciones.</p>
+            <p class="price">₡25 000</p>
+            <a class="btn btn-whatsapp btn-sm"
+               href="https://wa.me/50688342439?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Tiny%20Explorers%20English%20y%20deseo%20aplicar%20al%2015%25%20de%20descuento.">
+              Consultar por WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="course-card">
+            <span class="badge badge-area rounded-pill mb-2">Inglés para niños</span>
+            <h4>Little Explorers English</h4>
+            <p>Edad 5–6 años. Inglés inicial con actividades visuales.</p>
+            <p class="price">₡25 000</p>
+            <a class="btn btn-whatsapp btn-sm"
+               href="https://wa.me/50688342439?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Little%20Explorers%20English%20y%20deseo%20aplicar%20al%2015%25%20de%20descuento.">
+              Consultar por WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="course-card">
+            <span class="badge badge-area rounded-pill mb-2">Inglés para niños</span>
+            <h4>Junior Explorers English</h4>
+            <p>Edad 7–9 años. Vocabulario, frases y comprensión auditiva.</p>
+            <p class="price">₡25 000</p>
+            <a class="btn btn-whatsapp btn-sm"
+               href="https://wa.me/50688342439?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Junior%20Explorers%20English%20y%20deseo%20aplicar%20al%2015%25%20de%20descuento.">
+              Consultar por WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="course-card">
+            <span class="badge badge-area rounded-pill mb-2">Inglés para niños</span>
+            <h4>Young Achievers English</h4>
+            <p>Edad 10–12 años. Inglés comunicativo para expresión oral y lectura.</p>
+            <p class="price">₡25 000</p>
+            <a class="btn btn-whatsapp btn-sm"
+               href="https://wa.me/50688342439?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Young%20Achievers%20English%20y%20deseo%20aplicar%20al%2015%25%20de%20descuento.">
+              Consultar por WhatsApp
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ELECTRICIDAD -->
+  <section class="area-block">
+    <div class="container">
+      <div class="d-flex align-items-center gap-3 mb-4">
+        <div class="icon-box mb-0">
+          <i class="bi bi-lightning-charge"></i>
+        </div>
+
+        <div>
+          <h2 class="section-title mb-1">Electricidad</h2>
+          <p class="text-muted mb-0">Conocimientos prácticos para el hogar y reparaciones básicas.</p>
+        </div>
+      </div>
+
+      <div class="row g-4">
+
+        <div class="col-md-6 col-lg-4">
+          <div class="course-card">
+            <span class="badge badge-area rounded-pill mb-2">Electricidad</span>
+            <h4>Electricidad para hogar</h4>
+            <p>Conceptos y reparaciones básicas para el hogar.</p>
+            <p class="price">₡40 000</p>
+            <a class="btn btn-whatsapp btn-sm"
+               href="https://wa.me/50688342439?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Electricidad%20para%20hogar%20y%20deseo%20aplicar%20al%2015%25%20de%20descuento.">
+              Consultar por WhatsApp
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- BELLEZA -->
+  <section class="area-block">
+    <div class="container">
+      <div class="d-flex align-items-center gap-3 mb-4">
+        <div class="icon-box mb-0">
+          <i class="bi bi-stars"></i>
+        </div>
+
+        <div>
+          <h2 class="section-title mb-1">Belleza</h2>
+          <p class="text-muted mb-0">Servicios de estética, cuidado personal y emprendimiento.</p>
+        </div>
+      </div>
+
+      <div class="row g-4">
+
+        <div class="col-md-6 col-lg-4">
+          <div class="course-card">
+            <span class="badge badge-area rounded-pill mb-2">Belleza</span>
+            <h4>Manicure y Pedicure</h4>
+            <p>Cuidado estético de manos y pies.</p>
+            <p class="price">₡55 000</p>
+            <a class="btn btn-whatsapp btn-sm"
+               href="https://wa.me/50688342439?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Manicure%20y%20Pedicure%20y%20deseo%20aplicar%20al%2015%25%20de%20descuento.">
+              Consultar por WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="course-card">
+            <span class="badge badge-area rounded-pill mb-2">Belleza</span>
+            <h4>Taller: Limpieza facial profesional</h4>
+            <p>Cuidado facial básico y atención estética.</p>
+            <p class="price">₡25 000</p>
+            <a class="btn btn-whatsapp btn-sm"
+               href="https://wa.me/50688342439?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Limpieza%20facial%20profesional%20y%20deseo%20aplicar%20al%2015%25%20de%20descuento.">
+              Consultar por WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="course-card">
+            <span class="badge badge-area rounded-pill mb-2">Belleza</span>
+            <h4>Cosmética natural</h4>
+            <p>Elaboración de productos naturales para cuidado personal.</p>
+            <p class="price">₡25 000</p>
+            <a class="btn btn-whatsapp btn-sm"
+               href="https://wa.me/50688342439?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Cosm%C3%A9tica%20natural%20y%20deseo%20aplicar%20al%2015%25%20de%20descuento.">
+              Consultar por WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="course-card">
+            <span class="badge badge-area rounded-pill mb-2">Belleza</span>
+            <h4>Taller: Microagujas</h4>
+            <p>Introducción a técnicas estéticas especializadas.</p>
+            <p class="price">₡30 000</p>
+            <a class="btn btn-whatsapp btn-sm"
+               href="https://wa.me/50688342439?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Microagujas%20y%20deseo%20aplicar%20al%2015%25%20de%20descuento.">
+              Consultar por WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="course-card">
+            <span class="badge badge-area rounded-pill mb-2">Belleza</span>
+            <h4>Barber Shop</h4>
+            <p>Formación inicial en técnicas de barbería.</p>
+            <p class="price">₡50 000</p>
+            <a class="btn btn-whatsapp btn-sm"
+               href="https://wa.me/50688342439?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Barber%20Shop%20y%20deseo%20aplicar%20al%2015%25%20de%20descuento.">
+              Consultar por WhatsApp
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOTOGRAFÍA -->
+  <section class="area-block">
+    <div class="container">
+      <div class="d-flex align-items-center gap-3 mb-4">
+        <div class="icon-box mb-0">
+          <i class="bi bi-camera"></i>
+        </div>
+
+        <div>
+          <h2 class="section-title mb-1">Fotografía</h2>
+          <p class="text-muted mb-0">Fotografía con celular para redes, productos y emprendimientos.</p>
+        </div>
+      </div>
+
+      <div class="row g-4">
+
+        <div class="col-md-6 col-lg-4">
+          <div class="course-card">
+            <span class="badge badge-area rounded-pill mb-2">Fotografía</span>
+            <h4>Fotografía con celular</h4>
+            <p>Fotos atractivas para productos, redes sociales y emprendimientos.</p>
+            <p class="price">₡30 000</p>
+            <a class="btn btn-whatsapp btn-sm"
+               href="https://wa.me/50688342439?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Fotograf%C3%ADa%20con%20celular%20y%20deseo%20aplicar%20al%2015%25%20de%20descuento.">
+              Consultar por WhatsApp
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPETENCIAS ADMINISTRATIVAS -->
+  <section class="area-block">
+    <div class="container">
+      <div class="d-flex align-items-center gap-3 mb-4">
+        <div class="icon-box mb-0">
+          <i class="bi bi-briefcase"></i>
+        </div>
+
+        <div>
+          <h2 class="section-title mb-1">Competencias administrativas</h2>
+          <p class="text-muted mb-0">Capacitación para trabajo, comercio y emprendimientos.</p>
+        </div>
+      </div>
+
+      <div class="row g-4">
+
+        <div class="col-md-6 col-lg-4">
+          <div class="course-card">
+            <span class="badge badge-area rounded-pill mb-2">Competencias administrativas</span>
+            <h4>Servicio al cliente</h4>
+            <p>Comunicación, atención y experiencia del cliente.</p>
+            <p class="price">₡20 000</p>
+            <a class="btn btn-whatsapp btn-sm"
+               href="https://wa.me/50688342439?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Servicio%20al%20cliente%20y%20deseo%20aplicar%20al%2015%25%20de%20descuento.">
+              Consultar por WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="course-card">
+            <span class="badge badge-area rounded-pill mb-2">Competencias administrativas</span>
+            <h4>Contabilidad básica para emprendedores</h4>
+            <p>Control de ingresos, gastos y finanzas básicas.</p>
+            <p class="price">₡30 000</p>
+            <a class="btn btn-whatsapp btn-sm"
+               href="https://wa.me/50688342439?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Contabilidad%20b%C3%A1sica%20para%20emprendedores%20y%20deseo%20aplicar%20al%2015%25%20de%20descuento.">
+              Consultar por WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="course-card">
+            <span class="badge badge-area rounded-pill mb-2">Competencias administrativas</span>
+            <h4>Emprendedurismo: inicie su negocio</h4>
+            <p>Herramientas para iniciar y organizar un emprendimiento.</p>
+            <p class="price">₡35 000</p>
+            <a class="btn btn-whatsapp btn-sm"
+               href="https://wa.me/50688342439?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Emprendedurismo%20y%20deseo%20aplicar%20al%2015%25%20de%20descuento.">
+              Consultar por WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="course-card">
+            <span class="badge badge-area rounded-pill mb-2">Competencias administrativas</span>
+            <h4>Registro de planillas</h4>
+            <p>Procesos básicos relacionados con planillas laborales.</p>
+            <p class="price">₡45 000</p>
+            <a class="btn btn-whatsapp btn-sm"
+               href="https://wa.me/50688342439?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Registro%20de%20planillas%20y%20deseo%20aplicar%20al%2015%25%20de%20descuento.">
+              Consultar por WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="course-card">
+            <span class="badge badge-area rounded-pill mb-2">Competencias administrativas</span>
+            <h4>Manejo de cajas en el comercio</h4>
+            <p>Control de efectivo, atención y procesos de caja.</p>
+            <p class="price">₡45 000</p>
+            <a class="btn btn-whatsapp btn-sm"
+               href="https://wa.me/50688342439?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Manejo%20de%20cajas%20en%20el%20comercio%20y%20deseo%20aplicar%20al%2015%25%20de%20descuento.">
+              Consultar por WhatsApp
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ALBAÑILERÍA Y EBANISTERÍA -->
+  <section class="area-block">
+    <div class="container">
+      <div class="d-flex align-items-center gap-3 mb-4">
+        <div class="icon-box mb-0">
+          <i class="bi bi-hammer"></i>
+        </div>
+
+        <div>
+          <h2 class="section-title mb-1">Albañilería y Ebanistería</h2>
+          <p class="text-muted mb-0">Oficios prácticos para construcción, reparación y trabajo independiente.</p>
+        </div>
+      </div>
+
+      <div class="row g-4">
+
+        <div class="col-md-6 col-lg-4">
+          <div class="course-card">
+            <span class="badge badge-area rounded-pill mb-2">Albañilería y Ebanistería</span>
+            <h4>Albañil</h4>
+            <p>Oficio práctico para construcción, reparación y trabajo independiente.</p>
+            <p class="price">₡60 000</p>
+            <a class="btn btn-whatsapp btn-sm"
+               href="https://wa.me/50688342439?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Alba%C3%B1il%20y%20deseo%20aplicar%20al%2015%25%20de%20descuento.">
+              Consultar por WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="course-card">
+            <span class="badge badge-area rounded-pill mb-2">Albañilería y Ebanistería</span>
+            <h4>Ebanistería básica</h4>
+            <p>Introducción al trabajo con madera y elaboración de piezas básicas.</p>
+            <p class="price">₡60 000</p>
+            <a class="btn btn-whatsapp btn-sm"
+               href="https://wa.me/50688342439?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Ebanister%C3%ADa%20b%C3%A1sica%20y%20deseo%20aplicar%20al%2015%25%20de%20descuento.">
+              Consultar por WhatsApp
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="py-5">
+    <div class="container">
+      <div class="cta text-center">
+        <h2 class="fw-bold mb-3">
+          ¿Ya sabes cuál curso quieres matricular?
+        </h2>
+
+        <p class="fs-5 mb-4">
+          Aprovecha la promoción inicial antes de que finalice y asegura tu 15% de descuento.
+        </p>
+
+        <a href="descuento.html" class="btn btn-warning btn-lg rounded-pill fw-bold pulse">
+          Ir por mi descuento
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer py-4 text-center">
+    <div class="container">
+      <p class="mb-1 fw-bold">
+        Academia Artes y Oficios
+      </p>
+
+      <p class="mb-0">
+        Formación práctica para transformar vidas · Guácimo, Limón · WhatsApp 8834-2439
+      </p>
+    </div>
+  </footer>
+
+  <!-- BOTÓN FLOTANTE WHATSAPP -->
+  <a href="https://wa.me/50688342439?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20los%20cursos."
+     class="floating-whatsapp">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
